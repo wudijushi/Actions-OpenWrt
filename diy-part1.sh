@@ -16,3 +16,6 @@
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 sed -i '$a src-git diy1 https://github.com/xiaorouji/openwrt-package.git;master' feeds.conf.default
+cid=$(date "+%Y-%m-%d")
+sed -i "s/R20.10.20/R20.10.20[${cid}]-By JM.liu/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/luci-theme-bootstrap/luci-theme-netgear/g" feeds/luci/collections/luci/Makefile
